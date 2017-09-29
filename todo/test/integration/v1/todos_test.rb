@@ -5,6 +5,7 @@ class TodosTest < ActionDispatch::IntegrationTest
     get '/v1/todos'
     
     todos = json(response.body)
+    assert_response :success
 
     crash_todo = todo_items(:crash)
 
@@ -21,6 +22,7 @@ class TodosTest < ActionDispatch::IntegrationTest
     }
 
     post '/v1/todos', params: new_todo
+    assert_response :success
 
     todo = json(response.body)
 
@@ -37,6 +39,7 @@ class TodosTest < ActionDispatch::IntegrationTest
     }
 
     post '/v1/todos', params: new_todo
+    assert_response 422
 
     errors = json(response.body)
     
@@ -54,6 +57,8 @@ class TodosTest < ActionDispatch::IntegrationTest
     }
 
     patch "/v1/todos/#{crash_todo.id}", params: update_todo
+    assert_response :success
+
     todo = json(response.body)
     
     assert_equal todo[:status], "in_progress"
@@ -63,6 +68,7 @@ class TodosTest < ActionDispatch::IntegrationTest
     crash_todo = todo_items(:crash)
 
     delete "/v1/todos/#{crash_todo.id}"
+    assert_response :success
 
     #get list again
     get '/v1/todos'
