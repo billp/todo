@@ -7,17 +7,27 @@ module V1
 
 	 	def create
 	 		@todo = TodoItem.new(todo_params)
+
 	 		unless @todo.valid?
-	 			render json: @todo.errors, code: 422
+	 			render json: @todo.errors, status: 422
 	 		else
 	 			@todo.save
 	 		end
 	  end
 
 	  def update
+	  	@todo = TodoItem.find(params[:id])
+
+	  	if @todo.update_attributes(todo_params)
+	  		@todo.reload
+	  	else
+	  		render json: @todo.errors, status: 422
+	  	end
 	  end
 
 	  def destroy
+	  	todo = TodoItem.find(params[:id])
+	  	todo.destroy
 	  end
 
 
@@ -26,6 +36,4 @@ module V1
 				params.require(:todo).permit(:id, :title, :status)
 			end
 	end
-
-
 end

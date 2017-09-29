@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-eggs:
+crash:
   title: App crashes when wifi is off
   status: :active
 
-george:
+module:
   title: Write documentation for xyz module
   status: :pending
