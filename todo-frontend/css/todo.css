@@ -3,6 +3,10 @@ body {
 	color: #960200;
 }
 
+#todo-container {
+	min-width: 800px!important;
+}
+
 .todo-list-title {
 	font-size: 300%;
 	margin: 20px 0px;
@@ -43,8 +47,9 @@ body {
 }
 
 .todo-badge-active, .todo-badge-completed, .todo-badge-in-progress {
-	position: relative;
-	bottom: 5px;
+	position: absolute;
+	top: 25px;
+	right: 120px;
 	font-size: 50%;
 	margin-left: 10px;
 }
@@ -132,4 +137,17 @@ body {
     -webkit-border-radius: 6px 0 6px 6px;
     -moz-border-radius: 6px 0 6px 6px;
     border-radius: 6px 0 6px 6px;
+}
+
+.todo-title, .edit-todo-input {
+	width: 80%;
+	display: inline-block;
+}
+
+.todo-id-label {
+	font-size: 60%;
+	padding: 0px 10px 0px 5px;
+	color: #fff;
+	width: 40px;
+	display: inline-block;
 }
