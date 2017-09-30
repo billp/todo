@@ -13,7 +13,7 @@
     <div class="container" id="todo-container">
       <div class="row">
         <div class="col-lg-12 todo-list-title" align="center">
-          Todo
+          <i class="ion-android-done-all"></i> Todo List
         </div>
       </div>
       <div class="row">
@@ -23,12 +23,21 @@
       </div>
       <div class="row">
         <div class="col-lg-12" align="center">
+            <div class="empty-todo-list-message">
+              Todo list is empty :(
+            </div>
             <ul class="todo-list">
               
             </ul>
+            <div class="todo-list-filters">
+              <a id="todo-filter-all" class="active" href="#">All</a> |
+              <a id="todo-filter-in-progress" href="#">In Progress</a> |
+              <a id="todo-filter-completed" href="#">Completed</a>
+            </div>
           </div>
         </div>
       </div>
+      <footer><hr />Developed by Vasilis Panagiotopoulos - 2017</footer>
     </div>
     <script id="todo-item-template" type="text/x-jsrender">
       <li id="todo-{{:id}}">
@@ -43,7 +52,7 @@
           <span class="todo-badge-in-progress badge badge-secondary">In Progress</span>
         {{else}}
           <span class="todo-title completed">{{:title}}</span>
-          <span class="todo-badge-in-completed badge badge-secondary">Completed</span>
+          <span class="todo-badge-completed badge badge-secondary">Completed</span>
         {{/if}}
         
         <div class="btn-group todo-btn-group" role="group" aria-label="Button group with nested dropdown">
@@ -55,12 +64,12 @@
               <div class="dropdown-submenu">
                 <a class="dropdown-item" href="#">Set Status</a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Active</a>
-                  <a class="dropdown-item" href="#">In Progress</a>
-                  <a class="dropdown-item" href="#">Completed</a>
+                  <a id="todo-set-active-{{:id}}" class="dropdown-item" href="#">Active</a>
+                  <a id="todo-set-in-progress-{{:id}}" class="dropdown-item" href="#">In Progress</a>
+                  <a id="todo-set-completed-{{:id}}" class="dropdown-item" href="#">Completed</a>
                 </div>
               </div>
-              <a class="dropdown-item" href="#">Delete</a>
+              <a id="todo-delete-button-{{:id}}" class="dropdown-item" href="#">Delete</a>
             </div>
           </div>
         </div>

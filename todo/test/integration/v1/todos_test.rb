@@ -46,13 +46,13 @@ class TodosTest < ActionDispatch::IntegrationTest
     assert_includes errors[:title], "can't be blank"
   end
 
-  test "should update status" do
+  test "should update todo" do
     crash_todo = todo_items(:crash)
 
     update_todo = {
       'todo' => {
-      	'id' => crash_todo.id,
-       	'status' => 'in_progress'
+       	'status' => 'in_progress',
+        'title' => 'hello world'
       }
     }
 
@@ -62,6 +62,23 @@ class TodosTest < ActionDispatch::IntegrationTest
     todo = json(response.body)
     
     assert_equal todo[:status], "in_progress"
+  end
+
+  test "should not update todo" do
+    crash_todo = todo_items(:crash)
+
+    update_todo = {
+      'todo' => {
+        'status' => 'in_progress',
+        'title' => ''
+      }
+    }
+
+    patch "/v1/todos/#{crash_todo.id}", params: update_todo
+    assert_response 422
+
+    errors = json(response.body)    
+    assert_includes errors[:title], "can't be blank"
   end
 
   test "should delete todo" do
