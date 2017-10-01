@@ -166,12 +166,19 @@ $(function() {
   }
 
   //Filters
-  $('#todo-filter-all, #todo-filter-in-progress, #todo-filter-completed').unbind('click');
-  $('#todo-filter-all, #todo-filter-in-progress, #todo-filter-completed').click(function(e) {
+  $('#todo-filter-all, #todo-filter-active, #todo-filter-in-progress, #todo-filter-completed').unbind('click');
+  $('#todo-filter-all, #todo-filter-active, #todo-filter-in-progress, #todo-filter-completed').click(function(e) {
     e.preventDefault();
 
     if ($(this).prop('id').indexOf('all') > -1) {
       FilteredTodoItems = AllTodoItems.slice();
+    }
+    else if ($(this).prop('id').indexOf('active') > -1) {
+      FilteredTodoItems = $.grep(AllTodoItems, function(todo, i) {
+        if (todo.status == "active") {
+          return todo
+        }
+      });
     }
     else if ($(this).prop('id').indexOf('in-progress') > -1) {
       FilteredTodoItems = $.grep(AllTodoItems, function(todo, i) {
