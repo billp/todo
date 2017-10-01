@@ -1,117 +1,117 @@
 body {
-	background-color: #EADAA2;
-	color: #960200;
+  background-color: #EADAA2;
+  color: #960200;
 }
 
 a, a:hover {
-	color: #960200;
+  color: #960200;
 }
 
 a.active {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 #todo-container {
-	min-width: 800px!important;
+  min-width: 800px!important;
 }
 
 .todo-list-title {
-	font-size: 300%;
-	margin: 20px 0px;
-	color: #960200;
+  font-size: 300%;
+  margin: 20px 0px;
+  color: #960200;
 }
 
 .empty-todo-list-message {
-	display: none;
-	font-size: 150%;
-	margin-top: 30px;
-	color: #C9B775;
+  display: none;
+  font-size: 150%;
+  margin-top: 30px;
+  color: #C9B775;
 }
 
 .todo-list-filters {
-	display: none;
-	text-align: right;
+  display: none;
+  text-align: right;
 }
 
 .todo-list {
-	background-color: #fff;
-	list-style: none;
-	text-align: left;
-	border-radius: 10px;
-	font-size: 150%;
-	background-color: #CE6C47;
-	padding: 2px 0px;
-	display: none;
+  background-color: #fff;
+  list-style: none;
+  text-align: left;
+  border-radius: 10px;
+  font-size: 150%;
+  background-color: #CE6C47;
+  padding: 2px 0px;
+  display: none;
 }
 
 
 .todo-list li {
-	border-bottom: 1px solid #EB7B51;
-	position: relative;
-	padding: 15px 20px;
+  border-bottom: 1px solid #EB7B51;
+  position: relative;
+  padding: 15px 20px;
 }
 
 .todo-list li:last-child {
-	border-bottom: 0;
+  border-bottom: 0;
 }
 
 .todo-list li .completed {
-	text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 .todo-input, .todo-input:focus {
-	margin-bottom: 10px;
-	padding: 20px;
-	font-size: 140%;
-	background-color: #241E4E;
-	color: #EAEAEA;
+  margin-bottom: 10px;
+  padding: 20px;
+  font-size: 140%;
+  background-color: #241E4E;
+  color: #EAEAEA;
 }
 
 .todo-badge-active, .todo-badge-completed, .todo-badge-in-progress {
-	position: absolute;
-	top: 25px;
-	right: 120px;
-	font-size: 50%;
-	margin-left: 10px;
+  position: absolute;
+  top: 25px;
+  right: 120px;
+  font-size: 50%;
+  margin-left: 10px;
 }
 
 .todo-badge-active {
-	background-color: #EADAA2;
-	color: #960200;
+  background-color: #EADAA2;
+  color: #960200;
 }
 
 .todo-badge-completed {
-	background-color: #FFD046;
-	color: #960200;
+  background-color: #FFD046;
+  color: #960200;
 }
 
 .todo-badge-in-progress {
-	background-color: #960200;
-	color: #EADAA2;
+  background-color: #960200;
+  color: #EADAA2;
 }
 
 .todo-settings-icon {
-	font-size: 160%;
+  font-size: 160%;
 }
 
 .todo-settings-button {
-	padding: 6px 10px;
-	background-color: #EADAA2;
-	color: #960200;
-	border: none;
+  padding: 6px 10px;
+  background-color: #EADAA2;
+  color: #960200;
+  border: none;
 }
 
 .todo-settings-button:hover, .show > .todo-settings-button.btn-secondary.dropdown-toggle {
-	padding: 6px 10px;
-	background-color: #FFD046;
-	color: #960200;
-	border: none;
+  padding: 6px 10px;
+  background-color: #FFD046;
+  color: #960200;
+  border: none;
 }
 
 .todo-btn-group {
-	position: relative;
-	top: -4px;
-	float: right;
+  position: relative;
+  top: -4px;
+  float: right;
 }
 
 /* CSS for dropdown-submenu */
@@ -161,41 +161,41 @@ a.active {
 }
 
 .todo-title, .edit-todo-input {
-	width: 80%;
-	display: inline-block;
+  width: 80%;
+  display: inline-block;
 }
 
 .edit-todo-input {
-	background-color: inherit;
-	color: #960200;
-	width: 70%;
-	margin: 0px;
-	border: 0px;
-	border-bottom: 2px solid #960200;
+  background-color: inherit;
+  color: #960200;
+  width: 70%;
+  margin: 0px;
+  border: 0px;
+  border-bottom: 2px solid #960200;
 }
 
 .edit-todo-input:focus {
-	outline: none;
-	height: 34px;
+  outline: none;
+  height: 34px;
 }
 
 .todo-id-label {
-	font-size: 60%;
-	padding: 0px 10px 0px 5px;
-	color: #fff;
-	width: 40px;
-	display: inline-block;
-	position: relative;
-	top: -2px;
+  font-size: 60%;
+  padding: 0px 10px 0px 5px;
+  color: #fff;
+  width: 40px;
+  display: inline-block;
+  position: relative;
+  top: -2px;
 }
 
 footer hr {
-	width: 80%;
+  width: 80%;
 }
 
 footer {
-	margin: 50px 0px 16px 0px;
-	font-size: 80%;
-	text-align: center;
-	color: #960200;
+  margin: 50px 0px 16px 0px;
+  font-size: 80%;
+  text-align: center;
+  color: #960200;
 }

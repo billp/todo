@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class TodosTest < ActionDispatch::IntegrationTest
-	test "should contains a fixture todo" do
+  test "should contains a fixture todo" do
     get '/v1/todos'
     
     todos = json(response.body)
@@ -51,7 +51,7 @@ class TodosTest < ActionDispatch::IntegrationTest
 
     update_todo = {
       'todo' => {
-       	'status' => 'in_progress',
+        'status' => 'in_progress',
         'title' => 'hello world'
       }
     }
@@ -94,5 +94,5 @@ class TodosTest < ActionDispatch::IntegrationTest
 
     crash_todo = todo_items(:crash)
     assert_not_includes todos.collect { |todo| todo[:id] }, crash_todo.id
-	end
+  end
 end
